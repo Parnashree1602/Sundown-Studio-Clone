@@ -62,3 +62,26 @@ h1Elements.forEach((h1, index) => {
     this.classList.add("active");
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('#page5 .swiper-slide');
+    const heading = document.querySelector('#page5 #heading');
+
+    const observerOptions = {
+        root: null, 
+        threshold: 0.1 
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show'); 
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, observerOptions);
+    observer.observe(heading);
+    slides.forEach(slide => {
+        observer.observe(slide); 
+    });
+});
