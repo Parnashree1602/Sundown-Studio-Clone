@@ -1,7 +1,14 @@
-const scroll = new LocomotiveScroll({
-  el: document.querySelector("#main"),
-  smooth: true,
-});
+// const scroll = new LocomotiveScroll({
+//   el: document.querySelector("#main"),
+//   smooth: true,
+// });
+document.addEventListener('DOMContentLoaded', () => {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector(body), 
+      smooth: true,
+    });
+  });
+  
 
 var ec = document.querySelector("#elem-cont");
 var fix = document.querySelector("#fixed");
@@ -85,3 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(slide); 
     });
 });
+var loader = document.querySelector("#loader")
+    setTimeout(function () {
+        loader.style.top = "-100%"
+    }, 4200)

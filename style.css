@@ -11,10 +11,57 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+#loader{
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#loader h1{
+    font-size: 4vw;
+    font-weight: 700;
+    color: transparent;
+    background: linear-gradient(to right,orange,orangered);
+    -webkit-background-clip: text;
+    position: absolute;
+    opacity: 0;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+#loader h1:nth-child(2){
+    animation-delay: 2s;
+}
+#loader h1:nth-child(3){
+    animation-delay: 3s;
+}
+@keyframes load {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 #main {
   z-index: 11;
+  overflow: hidden;
   position: relative;
 }
+
 #page1 {
   min-height: 100vh;
   width: 100vw;
@@ -22,6 +69,7 @@ body {
   background-color: #efeae3;
   position: relative;
 }
+
 nav {
   padding: 2vw 0;
   width: 100%;
@@ -291,6 +339,7 @@ nav {
   justify-content: space-between;
   border-bottom: 1px solid #0000003c;
   overflow: hidden;
+  z-index: 12;
 }
 .elem h1 {
   font-size: 3vw;
@@ -425,7 +474,7 @@ nav {
 }
 #page5 {
   background-color: #efeae3;
-  height: 50vh;
+  height: 55vh;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -435,7 +484,7 @@ nav {
 #page5 .swiper-slide {
   opacity: 0;
   transform: translateY(-60px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 #page5 #heading.show,
@@ -474,7 +523,7 @@ nav {
 }
 
 #page6 {
-  height: 100vh;
+  height: 120vh;
   width: 100%;
 }
 #footer {
@@ -554,7 +603,7 @@ input::placeholder {
 }
 #circle1 {
   position: absolute;
-  height: 35vh;
+  height: 40vh;
   width: 100vw;
   background-color: #fe2f0a;
   z-index: 10;
@@ -563,7 +612,7 @@ input::placeholder {
   rotate: -10deg;
   filter: blur(20px);
   animation-name: anime3;
-  animation-duration: 8s;
+  animation-duration: 7s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
@@ -574,7 +623,7 @@ input::placeholder {
     transform: translate(5%, -10%) skew(8deg);
   }
   to {
-    filter: blur(40px);
+    filter: blur(50px);
     transform: translate(10%, 10%) skew(-12deg);
   }
 }
@@ -589,7 +638,7 @@ input::placeholder {
     rotate: 15deg;
     filter: blur(20px);
     animation-name: anime4;
-    animation-duration: 10s;
+    animation-duration: 7s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
@@ -597,11 +646,11 @@ input::placeholder {
   @keyframes anime4 {
     from {
       filter: blur(30px);
-      transform: translate(-10%, -10%) skew(0deg);
+      transform: translate(-5%, 10%) skew(0deg);
     }
     to {
-      filter: blur(40px);
-      transform: translate(-5%, 10%) skew(22deg);
+      filter: blur(50px);
+      transform: translate(-10%, -10%) skew(22deg);
     }
   }
   
