@@ -96,3 +96,27 @@ var loader = document.querySelector("#loader")
     setTimeout(function () {
         loader.style.top = "-100%"
     }, 4200)
+
+  var menu=document.querySelector("#menu");
+  var rmenu=document.querySelector("#rmenu");
+  var navimg=document.querySelector("nav img");
+  var cross=document.querySelector("#cross");
+  var m=document.querySelector("#m");
+  var flag=0;
+  menu.addEventListener("click",function(){
+    if(flag==0){
+        rmenu.style.top=0;
+    navimg.style.opacity=0;
+    cross.style.opacity=1;
+    m.style.opacity=0;
+    flag=1;
+    }
+    else{
+        rmenu.style.top="-100%";
+    navimg.style.opacity=1;
+    cross.style.opacity=0;
+    m.style.opacity=1;
+    flag=0;
+    }
+  })
+    

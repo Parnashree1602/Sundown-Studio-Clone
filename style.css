@@ -11,50 +11,50 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
-#loader{
-    height: 100%;
-    width: 100%;
-    background-color: #000;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    transition: all ease 0.7s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#loader {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  transition: all ease 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#loader h1{
-    font-size: 4vw;
-    font-weight: 700;
-    color: transparent;
-    background: linear-gradient(to right,orange,orangered);
-    -webkit-background-clip: text;
-    position: absolute;
-    opacity: 0;
-    animation-name: load;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-timing-function: linear;
+#loader h1 {
+  font-size: 4vw;
+  font-weight: 700;
+  color: transparent;
+  background: linear-gradient(to right, orange, orangered);
+  -webkit-background-clip: text;
+  position: absolute;
+  opacity: 0;
+  animation-name: load;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
 }
-#loader h1:nth-child(2){
-    animation-delay: 2s;
+#loader h1:nth-child(2) {
+  animation-delay: 2s;
 }
-#loader h1:nth-child(3){
-    animation-delay: 3s;
+#loader h1:nth-child(3) {
+  animation-delay: 3s;
 }
 @keyframes load {
-    0%{
-        opacity: 0;
-    }
-    10%{
-        opacity: 1;
-    }
-    90%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 #main {
   z-index: 11;
@@ -77,6 +77,10 @@ nav {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  z-index: 100;
+}
+nav #menu {
+  background-color: #efeae3;
 }
 #nav2 {
   display: flex;
@@ -117,6 +121,9 @@ nav {
 }
 #nav2 h4:hover a {
   color: #fff;
+}
+#menu {
+  display: none;
 }
 #middle {
   height: 65vh;
@@ -568,8 +575,8 @@ nav {
   color: #fff;
 }
 input::placeholder {
-    color: #fff; 
-  }
+  color: #fff;
+}
 
 #footer h1 {
   color: #efeae3;
@@ -628,29 +635,187 @@ input::placeholder {
   }
 }
 #circle2 {
+  position: absolute;
+  height: 50vh;
+  width: 100vw;
+  background-color: #fe330a;
+  z-index: 10;
+  top: -3vh;
+  right: -25vw;
+  rotate: 15deg;
+  filter: blur(20px);
+  animation-name: anime4;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+@keyframes anime4 {
+  from {
+    filter: blur(30px);
+    transform: translate(-5%, 10%) skew(0deg);
+  }
+  to {
+    filter: blur(50px);
+    transform: translate(-10%, -10%) skew(22deg);
+  }
+}
+#rmenu {
+  height: 100vh;
+  width: 100%;
+  background-color: #0000006f;
+  position: fixed;
+  z-index: 50;
+  top: -100%;
+  transition: all ease 0.5s;
+}
+#rmenu2 {
+    height: 50%;
+    width: 100%;
+    background-color: #efeae3;
+    border-radius: 15px;
+}
+#rmenu2 h1{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 30%;
+    padding-right: 5vw;
+}
+#rmenu2 h1 a{
+    color: #000;
+    font-size: 3.6rem;
+    font-weight: 600;
+}
+@media (max-width: 600px) {
+  #page1 {
+    padding: 0 ;
+  }
+  nav {
+    padding: 5vw 5vw;
+    background-color: #efeae3;
+  }
+  nav img {
+    scale: 0.8;
+    transition: all ease 0.2s;
+  }
+  #nav2 {
+    display: none;
+  }
+  #menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.143);
+    border-radius: 50px;
+    padding: 1.5vh 2.5vh;
+  }
+ #menu ion-icon{
     position: absolute;
-    height: 50vh;
-    width: 100vw;
+    right: 24%;
+ }
+  #menu h5 {
+    font-weight: 200;
+    font-size: 1rem;
+    padding-left: 4.5vh;
+    padding-right: 0.5vh;
+  }
+  #m{
+    transition: all ease 0.2s;
+  }
+  #cross{
+    font-size: 3vh;
+    opacity: 0;
+    transition: all ease 0.2s;
+  }
+  #middle {
+    height: 65vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #0000003c;
+    padding-bottom: 10vh;
+  }
+  #left h3 {
+    width: 30vw;
+    font-size: 2vw;
+    font-weight: 700;
+    line-height: 2vw;
+  }
+  #right h1 {
+    font-size: 10vw;
+    text-align: right;
+    line-height: 8vw;
+    font-weight: 700;
+  }
+  #page1 video {
+    position: relative;
+    border-radius: 15px;
+    margin-top: 7vh;
+    width: 100%;
+  }
+  #shape {
+    position: absolute;
+    width: 46vw;
+    height: 60vh;
+    right: 0;
+    top: 65vh;
+  }
+  #shape1 {
     background-color: #fe330a;
-    z-index: 10;
-    top: -3vh;
-    right: -25vw;
-    rotate: 15deg;
-    filter: blur(20px);
-    animation-name: anime4;
-    animation-duration: 7s;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    filter: blur(10px);
+    position: absolute;
+  }
+  #shape2 {
+    background: linear-gradient(#fe320a, #f67913);
+    height: 30vw;
+    width: 30vw;
+    border-radius: 50%;
+    position: absolute;
+    animation-name: anime2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
     animation-direction: alternate;
+    filter: blur(20px);
   }
-  @keyframes anime4 {
+
+  #shape3 {
+    background: linear-gradient(#fe320a, #f67913);
+    height: 30vw;
+    width: 30vw;
+    position: absolute;
+    border-radius: 50%;
+    animation-name: anime1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    filter: blur(20px);
+  }
+
+  @keyframes anime1 {
     from {
-      filter: blur(30px);
-      transform: translate(-5%, 10%) skew(0deg);
+      transform: translate(55%, -3%);
     }
+
     to {
-      filter: blur(50px);
-      transform: translate(-10%, -10%) skew(22deg);
+      transform: translate(0%, 10%);
     }
   }
-  
+
+  @keyframes anime2 {
+    from {
+      transform: translate(-20%, 20%);
+    }
+
+    to {
+      transform: translate(0%, 0%);
+    }
+  }
+}
