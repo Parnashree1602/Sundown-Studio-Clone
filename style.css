@@ -906,4 +906,7 @@ input::placeholder {
   #loader h1 {
     font-size: 10vw;
   }
+  #email {
+    border-bottom: 0.5px solid #ffffff;
+  }
 }
