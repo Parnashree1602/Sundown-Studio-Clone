@@ -110,7 +110,7 @@ menu.addEventListener("click", function () {
     m.style.opacity = 0;
     flag = 1;
   } else {
-    rmenu.style.top = "-150%";
+    rmenu.style.top = "-100%";
     navimg.style.opacity = 1;
     cross.style.opacity = 0;
     m.style.opacity = 1;
