@@ -2,13 +2,12 @@
 //   el: document.querySelector("#main"),
 //   smooth: true,
 // });
-document.addEventListener('DOMContentLoaded', () => {
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector(body), 
-      smooth: true,
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector(body),
+    smooth: true,
   });
-  
+});
 
 var ec = document.querySelector("#elem-cont");
 var fix = document.querySelector("#fixed");
@@ -70,53 +69,51 @@ h1Elements.forEach((h1, index) => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('#page5 .swiper-slide');
-    const heading = document.querySelector('#page5 #heading');
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll("#page5 .swiper-slide");
+  const heading = document.querySelector("#page5 #heading");
 
-    const observerOptions = {
-        root: null, 
-        threshold: 0.1 
-    };
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+  };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show'); 
-                observer.unobserve(entry.target); 
-            }
-        });
-    }, observerOptions);
-    observer.observe(heading);
-    slides.forEach(slide => {
-        observer.observe(slide); 
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
     });
+  }, observerOptions);
+  observer.observe(heading);
+  slides.forEach((slide) => {
+    observer.observe(slide);
+  });
 });
-var loader = document.querySelector("#loader")
-    setTimeout(function () {
-        loader.style.top = "-100%"
-    }, 4200)
+var loader = document.querySelector("#loader");
+setTimeout(function () {
+  loader.style.top = "-100%";
+}, 4200);
 
-  var menu=document.querySelector("#menu");
-  var rmenu=document.querySelector("#rmenu");
-  var navimg=document.querySelector("nav img");
-  var cross=document.querySelector("#cross");
-  var m=document.querySelector("#m");
-  var flag=0;
-  menu.addEventListener("click",function(){
-    if(flag==0){
-        rmenu.style.top=0;
-    navimg.style.opacity=0;
-    cross.style.opacity=1;
-    m.style.opacity=0;
-    flag=1;
-    }
-    else{
-        rmenu.style.top="-100%";
-    navimg.style.opacity=1;
-    cross.style.opacity=0;
-    m.style.opacity=1;
-    flag=0;
-    }
-  })
-    
+var menu = document.querySelector("#menu");
+var rmenu = document.querySelector("#rmenu");
+var navimg = document.querySelector("nav img");
+var cross = document.querySelector("#cross");
+var m = document.querySelector("#m");
+var flag = 0;
+menu.addEventListener("click", function () {
+  if (flag == 0) {
+    rmenu.style.top = 0;
+    navimg.style.opacity = 0;
+    cross.style.opacity = 1;
+    m.style.opacity = 0;
+    flag = 1;
+  } else {
+    rmenu.style.top = "-100%";
+    navimg.style.opacity = 1;
+    cross.style.opacity = 0;
+    m.style.opacity = 1;
+    flag = 0;
+  }
+});
