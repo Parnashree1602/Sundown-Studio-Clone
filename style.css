@@ -690,6 +690,8 @@ input::placeholder {
   font-weight: 600;
 }
 
+
+
 @media (max-width: 600px) {
   #page1 {
     padding: 0;
