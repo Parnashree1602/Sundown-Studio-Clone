@@ -677,6 +677,7 @@ input::placeholder {
 }
 #rmenu2 h1 {
   display: flex;
+  text-decoration: none;
   justify-content: flex-end;
   position: relative;
   top: 30%;
